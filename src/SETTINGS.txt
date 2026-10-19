@@ -1,0 +1,6 @@
+backlight timer
+sleep timer
+GPS feed rate
+screen brightness
+hold button timer
+RTC set time

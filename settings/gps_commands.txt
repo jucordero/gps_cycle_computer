@@ -1,0 +1,28 @@
+// Set position interval to 2000 miliseconds
+GPSSerial.print(F("$PMTK220,2000*1C\r\n"));
+
+// Set position interval to 250 miliseconds
+GPSSerial.print(F("$PMTK220,250*29\r\n"));
+
+// Set to visible only RMC and GGA messages, every update: Position, speed and used visible satellites
+GPSSerial.print(F("$PMTK314,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0*28\r\n"));
+
+// Set to visible only RMC messages every update: Position and speed.
+GPSSerial.print(F("$PMTK314,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0*29\r\n"));
+
+//Set to visible only RMC, GGA messages every update and every 5 updates respectively: Position, speed and used visible satellites
+GPSSerial.print(F("$PMTK314,0,1,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0*2C\r\n"));
+
+// Enter stand-by mode for power saving
+GPSSerial.print(F("$PMTK161,0*28\r\n"));
+
+// Restore factory settings
+GPSSerial.print(F("$PMTK314,-1*04\r\n"));
+
+// Set baudrate to 115200
+GPSSerial.print(F("$PMTK251,115200*1F\r\n"));
+
+// Set periodic standby mode. Does not work with quectel L80
+GPSSerial.print(F("PMTK225,2,10000,600000,0,0*1E\r\n"));
+
+GPSSerial.print(F(" \r\n"));
